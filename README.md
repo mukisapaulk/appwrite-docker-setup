@@ -1,25 +1,16 @@
-I can help you clean this up into professional, well-structured documentation. Here's your polished installation guide:
-
----
-
 # Appwrite Docker Installation Guide
-## For Low-Bandwidth / Unstable Internet Environments
+### For Low-Bandwidth / Unstable Internet Environments
 
 This guide provides a step-by-step installation process for Appwrite using Docker Compose, optimized for slow or unstable internet connections. Images are pulled individually to prevent download failures and corruption.
 
----
-
 ## Prerequisites
-
 - Docker Engine installed and running
 - Docker Compose (v2+) installed
 - Minimum ~5 Mbps consistent internet connection recommended for `docker compose up`
 - Ports `20080` and `20443` available on the host machine
-
 ---
 
 ## Docker Compose Configuration
-
 Create or update your `docker-compose.yml` with the following port mappings:
 
 ```yaml
@@ -52,7 +43,6 @@ services:
 ---
 
 ## Step-by-Step Installation
-
 ### Step 1: Pull Infrastructure Images (One at a Time)
 
 Run each command individually. Wait for each to complete successfully before proceeding.
@@ -69,7 +59,6 @@ docker compose pull redis
 ```
 
 ### Step 2: Pull Appwrite Core Images
-
 ```bash
 # 4. Pull Appwrite main service
 docker compose pull appwrite
@@ -87,8 +76,6 @@ so if you have mbps of 5mbps and above that is consistent then run
     docker compose up -d --remove-orphans
 If things crash run it again
 after all is done appwrite will start
-
----
 
 ## Starting the Services
 
@@ -108,8 +95,6 @@ docker compose up -d --remove-orphans
 
 Appwrite will automatically start once all services are healthy.
 
----
-
 ## Accessing the Console
 
 After successful installation, open your browser and navigate to:
@@ -117,8 +102,6 @@ After successful installation, open your browser and navigate to:
 ```
 http://localhost:20080/console/
 ```
-
----
 
 ## Lifecycle Commands
 
@@ -131,7 +114,6 @@ http://localhost:20080/console/
 | **View specific service logs** | `docker compose logs -f appwrite` |
 | **Check service status** | `docker compose ps` |
 
----
 
 ## Troubleshooting
 
@@ -142,7 +124,6 @@ http://localhost:20080/console/
 | Port already in use | Ensure ports `20080` and `20443` are free: `lsof -i :20080` |
 | Services not connecting | Wait 30–60 seconds after startup for dependency initialization |
 
----
 
 ## Quick Reference Script
 
