@@ -1,0 +1,1 @@
+# appwrite-docker-setup
